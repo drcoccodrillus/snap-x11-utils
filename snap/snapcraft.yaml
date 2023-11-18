@@ -1,0 +1,63 @@
+name: x11-utils-snap
+base: core22
+version: '7.7+5build2'
+summary: X11 utilities
+description: |
+  An X client is a program that interfaces with an X server (almost always via the X libraries), and thus with some input and output hardware like a graphics card, monitor, keyboard, and pointing device (such as a mouse).
+  This package provides a miscellaneous assortment of X utilities that ship with the X Window System
+
+#grade: devel           # This is for development only.
+#confinement: devmode   # This is for development only. Unconfined snap environment. For production, use strict.
+grade: stable           # This is for releasing in the stable channel.
+confinement: strict     # This is for production only.
+
+apps:
+  xdpyinfo:
+    command: usr/bin/xdpyinfo
+    plugs: [home, network]
+  xdriinfo:
+    command: usr/bin/xdriinfo
+    plugs: [home, network, opengl, x11]
+  xev:
+    command: usr/bin/xev
+    plugs: [home, network]
+  xfd:
+    command: usr/bin/xfd
+    plugs: [home, network]
+  xfontsel:
+    command: usr/bin/xfontsel
+    plugs: [home, network]
+  xkill:
+    command: usr/bin/xkill
+    plugs: [home, network]
+  xlsatoms:
+    command: usr/bin/xlsatoms
+    plugs: [home, network]
+  xlsclients:
+    command: usr/bin/xlsclients
+    plugs: [home, network]
+  xlsfonts:
+    command: usr/bin/xlsfonts
+    plugs: [home, network]
+  xmessage:
+    command: usr/bin/xmessage
+    plugs: [home, network]
+  xprop:
+    command: usr/bin/xprop
+    plugs: [home, network]
+  xvinfo:
+    command: usr/bin/xvinfo
+    plugs: [home, network]
+  xwininfo:
+    command: usr/bin/xwininfo
+    plugs: [home, network]
+
+parts:
+  # Install usbutils from apt
+  x11-utils:
+    plugin: nil
+    stage-packages:
+      - x11-utils
+    override-pull: |
+      apt-get update && apt-get upgrade -y
+      snapcraftctl pull
