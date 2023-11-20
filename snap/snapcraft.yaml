@@ -14,43 +14,43 @@ confinement: strict     # This is for production only.
 apps:
   xdpyinfo:
     command: usr/bin/xdpyinfo
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xdriinfo:
     command: usr/bin/xdriinfo
     plugs: [home, network, opengl, x11]
   xev:
     command: usr/bin/xev
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xfd:
     command: usr/bin/xfd
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xfontsel:
     command: usr/bin/xfontsel
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xkill:
     command: usr/bin/xkill
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xlsatoms:
     command: usr/bin/xlsatoms
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xlsclients:
     command: usr/bin/xlsclients
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xlsfonts:
     command: usr/bin/xlsfonts
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xmessage:
     command: usr/bin/xmessage
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xprop:
     command: usr/bin/xprop
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xvinfo:
     command: usr/bin/xvinfo
-    plugs: [home, network]
+    plugs: [home, network, x11]
   xwininfo:
     command: usr/bin/xwininfo
-    plugs: [home, network]
+    plugs: [home, network, x11]
 
 parts:
   # Install usbutils from apt
