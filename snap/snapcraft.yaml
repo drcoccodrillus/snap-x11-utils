@@ -53,7 +53,7 @@ apps:
     plugs: [home, network, x11]
 
 parts:
-  # Install usbutils from apt
+  # Install x11-utils from apt
   x11-utils:
     plugin: nil
     stage-packages:
